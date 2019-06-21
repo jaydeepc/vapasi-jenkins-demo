@@ -6,7 +6,31 @@ pipeline {
         sh 'sh build.sh'
       }
     }
-    stage('Test') {
+    stage('UI Tests') {
+      parallel {
+        stage('IE') {
+          steps {
+            sh 'sh test.sh'
+          }
+        }
+        stage('Firefox') {
+          steps {
+            sh 'sh test.sh'
+          }
+        }
+        stage('Chrome') {
+          steps {
+            sh 'sh test.sh'
+          }
+        }
+      }
+    }
+    stage('API tests') {
+      steps {
+        sh 'sh test.sh'
+      }
+    }
+    stage('Integration Tests') {
       steps {
         sh 'sh test.sh'
       }
