@@ -27,7 +27,8 @@ pipeline {
     }
     stage('API tests') {
       steps {
-        sh 'sh test.sh'
+        sh '''abbcd
+sh test.sh'''
       }
     }
     stage('Integration Tests') {
