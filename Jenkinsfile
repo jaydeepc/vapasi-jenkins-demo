@@ -27,8 +27,7 @@ pipeline {
     }
     stage('API tests') {
       steps {
-        sh '''asdadad
-sh test.sh'''
+        sh 'sh test.sh'
       }
     }
     stage('Integration Tests') {
